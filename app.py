@@ -1,10 +1,9 @@
 import streamlit as st
 import joblib
 
-model_data = joblib.load("electric_bill_ac_fan_polynomial_model.pkl")
+model = joblib.load("electric_bill_ac_fan_polynomial_model.pkl")
 
-poly = model_data["poly"]
-model = model_data["model"]
+
 
 st.title("Electric Bill Predictor")
 
@@ -18,7 +17,6 @@ if st.button("Predict Bill"):
 
     new_data = [[ac_units, fan_units]]
 
-    new_data_poly = poly.transform(new_data)
 
     prediction = model.predict(new_data_poly)
 
