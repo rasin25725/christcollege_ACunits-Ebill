@@ -1,6 +1,6 @@
 import streamlit as st
 import joblib
-
+import pandas as pd
 model = joblib.load("electric_bill_ac_fan_polynomial_model.pkl")
 
 
