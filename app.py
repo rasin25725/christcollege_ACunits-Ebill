@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 
 # Load model (saved as a dict: {"poly": poly, "model": model})
-model_data = joblib.load("electric_bill_ac_fan_others_polynomial_model.pkl")
+model_data = joblib.load("electric_bill_polynomial_others_model.pkl")
 poly = model_data["poly"]
 model = model_data["model"]
 
