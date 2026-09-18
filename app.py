@@ -15,9 +15,9 @@ fan_units = st.number_input("Enter Fan Units", min_value=0.0, value=20.0)
 
 if st.button("Predict Bill"):
 
-    new_data = [[ac_units, fan_units]]
+    new_data = pd.DataFrame({"AC_Units":[ac_units],"Fan_Units":[fan_units]})
+    
 
-
-    prediction = model.predict(new_data_poly)
+    prediction = model.predict(new_data)[0]
 
     st.success(f"Expected Electric Bill: ₹{prediction[0]:.2f}")
